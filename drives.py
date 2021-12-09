@@ -1,3 +1,4 @@
+import time
 from adafruit_motorkit import MotorKit
 import board
 
@@ -8,9 +9,13 @@ def main():
     m3      = kit.motor3
     m4      = kit.motor4
 
-    m1.throttle = 0.3
+    
     while 1:
-        continue
+        kit.motor1.throttle = 1.0
+        time.sleep(0.5)
+        kit.motor1.throttle = 0
+        
+    
 
 
 if __name__ == '__main__':
